@@ -1,4 +1,4 @@
-package com.starq.productservice.model
+package com.starq.productservice.model;
 
 
 import lombok.AllArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
 
-@Document(value = "product")
+@Document(collection = "product")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
