@@ -11,6 +11,7 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import org.testcontainers.containers.MongoDBContainer;
@@ -20,7 +21,10 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mongodb.assertions.Assertions;
+
 import com.starq.productservice.dto.ProductRequest;
+import com.starq.productservice.repository.ProductRepository;
 
 @SpringBootTest
 @Testcontainers
@@ -34,6 +38,8 @@ class ProductServiceApplicationTests {
 
 	@Autowired
 	private ObjectMapper objectMapper;
+	@Autowired
+	private ProductRepository productRepository;
 
 	@DynamicPropertySource
 	static void setProperties(DynamicPropertyRegistry dynamicPropertyRegistry){
@@ -49,6 +55,7 @@ class ProductServiceApplicationTests {
 		.contentType(MediaType.APPLICATION_JSON)
 		.content(productRequestString))
 		.andExpect(status().isCreated());
+		assertEquals(1, productRepository.findAll().size()); 
 
 	}
 
