@@ -1,6 +1,7 @@
 package com.starq.productservice;
 
 import java.math.BigDecimal;
+import java.util.concurrent.CompletableFuture;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,8 @@ class ProductServiceApplicationTests {
 	@Container
 	static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo"); 
 
+	
+
 	@Autowired
 	private MockMvc mockMvc;
 
@@ -45,17 +48,57 @@ class ProductServiceApplicationTests {
 	static void setProperties(DynamicPropertyRegistry dynamicPropertyRegistry){
 		dynamicPropertyRegistry.add("spring.data.mongodb.uri", mongoDBContainer::getReplicaSetUrl);
 	}
-	@Test
-	void shouldCreateProduct() throws Exception {
-		ProductRequest productRequest = getProductRequest();
-		//let's do an equivalent of JSON.stringify in java
-		String productRequestString = objectMapper.writeValueAsString(productRequest);
+	
 
-		mockMvc.perform(post("/api/product")
-		.contentType(MediaType.APPLICATION_JSON)
-		.content(productRequestString))
-		.andExpect(status().isCreated());
-		assertEquals(1, productRepository.findAll().size()); 
+	@Test
+	void shouldCreateAndFetchProducts() {
+		CompletableFuture<Void> result = createProduct().thenComposeAsync(created -> {
+			return CompletableFuture.runAsync(()->{
+				try {
+					mockMvc.perform(get("/api/product")
+					.contentType(MediaType.APPLICATION_JSON))
+					.andExpect(status().isOk())
+					.andExpect(content().contentType(MediaType.APPLICATION_JSON))
+					.andExpect(jsonPath("$.length()").value(productRepository.findAll().size()));
+				} catch(Exception e){
+					fail("Exception occurred during product fetch: " + e.getMessage());
+				}
+				
+			});
+		});
+
+		
+
+
+	result.join();	
+			
+		
+	}
+	 
+	
+	private CompletableFuture<Boolean> createProduct() {
+		
+			return CompletableFuture.supplyAsync(()->{
+				try {
+					ProductRequest productRequest = getProductRequest();
+					//let's do an equivalent of JSON.stringify in java
+					String productRequestString = objectMapper.writeValueAsString(productRequest);
+
+					mockMvc.perform(post("/api/product")
+					.contentType(MediaType.APPLICATION_JSON)
+					.content(productRequestString))
+					.andExpect(status().isCreated());
+					assertEquals(1, productRepository.findAll().size());
+					return true;
+				} catch(Exception e){
+					return false;
+				}
+					
+
+				
+			});
+			
+		
 
 	}
 
