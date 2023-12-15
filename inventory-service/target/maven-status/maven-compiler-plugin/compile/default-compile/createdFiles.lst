@@ -1,0 +1,6 @@
+com/starq/inventoryservice/InventoryServiceApplication.class
+com/starq/inventoryservice/service/InventoryService.class
+com/starq/inventoryservice/model/Inventory.class
+com/starq/inventoryservice/controller/InventoryController.class
+com/starq/inventoryservice/repository/InventoryRepository.class
+com/starq/inventoryservice/model/Inventory$InventoryBuilder.class

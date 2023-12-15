@@ -1,0 +1,8 @@
+/Users/starq1/IdeaProjects/ecomm-app/order-service/src/main/java/com/starq/orderservice/model/OrderLineItems.java
+/Users/starq1/IdeaProjects/ecomm-app/order-service/src/main/java/com/starq/orderservice/service/OrderService.java
+/Users/starq1/IdeaProjects/ecomm-app/order-service/src/main/java/com/starq/orderservice/dto/OrderRequest.java
+/Users/starq1/IdeaProjects/ecomm-app/order-service/src/main/java/com/starq/orderservice/repository/OrderRepository.java
+/Users/starq1/IdeaProjects/ecomm-app/order-service/src/main/java/com/starq/orderservice/dto/OrderLineItemsDto.java
+/Users/starq1/IdeaProjects/ecomm-app/order-service/src/main/java/com/starq/orderservice/model/Order.java
+/Users/starq1/IdeaProjects/ecomm-app/order-service/src/main/java/com/starq/orderservice/controller/OrderController.java
+/Users/starq1/IdeaProjects/ecomm-app/order-service/src/main/java/com/starq/orderservice/OrderServiceApplication.java

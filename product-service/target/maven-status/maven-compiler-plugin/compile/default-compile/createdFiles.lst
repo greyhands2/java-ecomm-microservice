@@ -1,0 +1,10 @@
+com/starq/productservice/repository/ProductRepository.class
+com/starq/productservice/dto/ProductResponse$ProductResponseBuilder.class
+com/starq/productservice/model/Product.class
+com/starq/productservice/ProductServiceApplication.class
+com/starq/productservice/model/Product$ProductBuilder.class
+com/starq/productservice/service/ProductService.class
+com/starq/productservice/dto/ProductRequest.class
+com/starq/productservice/dto/ProductRequest$ProductRequestBuilder.class
+com/starq/productservice/controller/ProductController.class
+com/starq/productservice/dto/ProductResponse.class
