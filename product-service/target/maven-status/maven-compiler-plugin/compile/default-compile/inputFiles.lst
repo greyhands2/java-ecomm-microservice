@@ -1,7 +1,7 @@
-/Users/starq1/IdeaProjects/ecomm-app/product-service/src/main/java/com/starq/productservice/model/Product.java
-/Users/starq1/IdeaProjects/ecomm-app/product-service/src/main/java/com/starq/productservice/service/ProductService.java
-/Users/starq1/IdeaProjects/ecomm-app/product-service/src/main/java/com/starq/productservice/ProductServiceApplication.java
-/Users/starq1/IdeaProjects/ecomm-app/product-service/src/main/java/com/starq/productservice/repository/ProductRepository.java
-/Users/starq1/IdeaProjects/ecomm-app/product-service/src/main/java/com/starq/productservice/dto/ProductRequest.java
-/Users/starq1/IdeaProjects/ecomm-app/product-service/src/main/java/com/starq/productservice/controller/ProductController.java
-/Users/starq1/IdeaProjects/ecomm-app/product-service/src/main/java/com/starq/productservice/dto/ProductResponse.java
+/Users/starq1/codingz/javaProjz/springbootProjz/microservices/ecomm-app/product-service/src/main/java/com/starq/productservice/dto/ProductRequest.java
+/Users/starq1/codingz/javaProjz/springbootProjz/microservices/ecomm-app/product-service/src/main/java/com/starq/productservice/repository/ProductRepository.java
+/Users/starq1/codingz/javaProjz/springbootProjz/microservices/ecomm-app/product-service/src/main/java/com/starq/productservice/controller/ProductController.java
+/Users/starq1/codingz/javaProjz/springbootProjz/microservices/ecomm-app/product-service/src/main/java/com/starq/productservice/model/Product.java
+/Users/starq1/codingz/javaProjz/springbootProjz/microservices/ecomm-app/product-service/src/main/java/com/starq/productservice/dto/ProductResponse.java
+/Users/starq1/codingz/javaProjz/springbootProjz/microservices/ecomm-app/product-service/src/main/java/com/starq/productservice/ProductServiceApplication.java
+/Users/starq1/codingz/javaProjz/springbootProjz/microservices/ecomm-app/product-service/src/main/java/com/starq/productservice/service/ProductService.java
