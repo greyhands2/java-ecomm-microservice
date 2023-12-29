@@ -26,10 +26,10 @@ public class SecurityConfig {
     @Bean
     public InMemoryUserDetailsManager userDerailsService() {
         UserDetails user = User.withDefaultPasswordEncoder()
-                        .username(username)
-                                .password(password)
-                                        .roles("USER")
-                                                .build();
+                .username(username)
+                .password(password)
+                .roles("USER")
+                .build();
         return new InMemoryUserDetailsManager(user);
     }
 
@@ -43,3 +43,4 @@ public class SecurityConfig {
 
     }
 }
+
