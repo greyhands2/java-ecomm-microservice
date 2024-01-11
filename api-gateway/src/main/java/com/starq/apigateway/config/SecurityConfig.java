@@ -1,4 +1,4 @@
-package com.starq.config;
+package com.starq.apigateway.config;
 
 
 import org.springframework.context.annotation.Bean;
