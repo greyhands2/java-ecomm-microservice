@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mongo-product
+  name: mongo-product
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-product
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mongo-product
+    spec:
+      containers:
+        - image: mongo:4.4.14-rc0-focal
+          name: mongo-product
+          ports:
+            - containerPort: 27017
+          resources: {}
+          volumeMounts:
+            - mountPath: /data/db
+              name: mongo-product-claim0
+      restartPolicy: Always
+      volumes:
+        - name: mongo-product-claim0
+          persistentVolumeClaim:
+            claimName: mongo-product-claim0
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mongo-product
+  name: mongo-product
+spec:
+  ports:
+    - name: "27017"
+      port: 27017
+      targetPort: 27017
+  selector:
+    app: mongo-product
+status:
+  loadBalancer: {}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: mongo-product-claim0
+  name: mongo-product-claim0
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+status: {}

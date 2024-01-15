@@ -7,8 +7,8 @@ services:
     image: postgres
     environment:
       POSTGRES_DB: inventory-service
-      POSTGRES_USER: ptechie
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: posql
       PGDATA: /data/postgres
     volumes:
       - ./postgres-inventory:/data/postgres
@@ -21,8 +21,8 @@ services:
     image: postgres
     environment:
       POSTGRES_DB: order-service
-      POSTGRES_USER: ptechie
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: posql
       PGDATA: /data/postgres
     volumes:
       - ./postgres-order:/data/postgres
