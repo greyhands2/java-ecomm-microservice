@@ -47,7 +47,9 @@ public class OrderService {
 
         Span inventoryServiceLookup = tracer.nextSpan().name("InventoryServiceLookup");
 
-        try(Tracer.SpanInScope spanInScope =  tracer.withSpan(inventoryServiceLookup.start())){
+        try(Tracer.SpanInScope isLookup =  tracer.withSpan(inventoryServiceLookup.start())){
+            inventoryServiceLookup.tag("call", "inventory-service");
+
             //call inventory service and place order if product is in stock
             InventoryResponse[] inventoryResArr = webClientBuilder.build().get()
                     .uri("http://inventory-service/api/inventory",

@@ -5,8 +5,12 @@ com/starq/orderservice/model/Order$OrderBuilder.class
 com/starq/orderservice/model/OrderLineItems.class
 com/starq/orderservice/dto/OrderLineItemsDto$OrderLineItemsDtoBuilder.class
 com/starq/orderservice/dto/OrderRequest.class
+com/starq/orderservice/event/OrderPlacedEvent.class
+com/starq/orderservice/dto/InventoryResponse.class
 com/starq/orderservice/service/OrderService.class
+com/starq/orderservice/config/WebClientConfig.class
 com/starq/orderservice/controller/OrderController.class
 com/starq/orderservice/OrderServiceApplication.class
+com/starq/orderservice/dto/InventoryResponse$InventoryResponseBuilder.class
 com/starq/orderservice/dto/OrderLineItemsDto.class
 com/starq/orderservice/model/OrderLineItems$OrderLineItemsBuilder.class
