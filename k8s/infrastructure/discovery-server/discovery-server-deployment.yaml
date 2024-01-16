@@ -23,7 +23,7 @@ spec:
           image: tonystarq/discovery-server:latest
           name: discovery-server
           ports:
-            - containerPort: 8761
+            - containerPort: 8762
           resources: {}
       restartPolicy: Always
 status: {}
@@ -36,9 +36,9 @@ metadata:
   name: discovery-server
 spec:
   ports:
-    - name: "8761"
-      port: 8761
-      targetPort: 8761
+    - name: "8762"
+      port: 8762
+      targetPort: 8762
   selector:
     app: discovery-server
 status:
